@@ -15,18 +15,11 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
 
-////// 무결성 확인코드를 넣기.
-
 public class Main {
 		
 	String me;
 
 	public static void main(String[] args) throws Exception {
-
-//		SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy-MM-dd HH:mm:ss");
-//		Date time = new Date();
-//		String time1 = format1.format(time);
-//		System.out.println(time1);
 		
 		Main m = new Main();
 		Scanner scan = new Scanner(System.in);
@@ -44,7 +37,7 @@ public class Main {
 
 		while (!(num == 0)) {
 
-			System.out.println("어떤 기능을 수행 하시겠습니까?(1.로그인        2.회원가입        0.종료)");
+			System.out.println("Please Menu Choice!!(1.Sign in        2.Sign up        0.Exit)");
 			num = scan.nextInt();
 
 			switch (num) {
@@ -52,9 +45,9 @@ public class Main {
 
 				me = dmgr.Login(scan);
 				if (me == null) {
-					System.out.println("로그인 실패");
+					System.out.println("Login fail");
 				} else {
-					System.out.println(me + "님 반갑습니다.");
+					System.out.println(me + " Welcome!!");
 					userMenu(scan, dmgr);
 				}
 				break;
@@ -65,7 +58,7 @@ public class Main {
 
 			case 0:
 				dmgr.initMe();
-				System.out.println("종료합니다.");
+				System.out.println("Program Exit.");
 				break;
 			}
 		}
@@ -75,12 +68,12 @@ public class Main {
 
 		int num = 99;
 		while(true) {
-			System.out.println("어떤 기능을 수행 하시겠습니까?(1.메시지 전송        2.받은 메시지        3.보낸 메세지        0.로그아웃)");
+			System.out.println("Please Menu Choice?(1.Send Message        2.ShowReceiveMsg        3.ShowSendMsg        0.Logout)");
 			
 			num = scan.nextInt();
 			
 			if(num==0) {
-				System.out.println("로그아웃...");
+				System.out.println("User Logout...");
 				break;
 			}
 			

@@ -36,24 +36,20 @@ public class Message {
 	
 	void printTitle() {
 		System.out.printf("%27s // %10s // %10s // %20s\n",title,sender,receiver,time);
-//		System.out.printf("%s\t\t\t // %s // %s // %s\n",title,sender,receiver,time);
-//		System.out.println("송신자 : " + sender);
-//		System.out.println("수신자 : " + receiver);
-//		System.out.println("제목 : " + title);
-//		System.out.println("전송시간 : " + time);
+
 	}
 	
 	void print() {
 		System.out.println("===========================================================================");
-		System.out.println("송신자 : " + sender);
-		System.out.println("수신자 : " + receiver);
-		System.out.println("제목 : " + title);
-		System.out.println("메시지 : " + msg);
-		System.out.println("전송시간 : " + time);
+		System.out.println("Sender : " + sender);
+		System.out.println("Receiver : " + receiver);
+		System.out.println("Title : " + title);
+		System.out.println("Msg : " + msg);
+		System.out.println("Time : " + time);
 		if(this.hash.equals(SHA256.makeHash(msg)))
-			System.out.println("무결성 검증 완료...");
+			System.out.println("Integrity Okay...");
 		else
-			System.out.println("무결성 손상됨...");
+			System.out.println("Integrity Break...");
 		System.out.println("===========================================================================");
 
 
